@@ -23,7 +23,7 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public Result Add(Product product) {
+    public Result add(Product product) {
         this._productDao.save(product);
         return new SuccessResult("Ürün Eklendi");
     }
