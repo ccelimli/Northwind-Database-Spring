@@ -7,7 +7,7 @@ import com.kodlamaio.entities.concretes.Product;
 import java.util.List;
 
 public interface ProductService {
-    Result Add(Product product);
+    Result add(Product product);
     Result Delete(int id);
     Result Update(Product product);
    DataResult<List<Product>> getAll();

@@ -2,11 +2,10 @@ package com.kodlamaio.webApi.controllers;
 
 import com.kodlamaio.business.abstracts.ProductService;
 import com.kodlamaio.core.utilities.results.DataResult;
+import com.kodlamaio.core.utilities.results.Result;
 import com.kodlamaio.entities.concretes.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +19,10 @@ public class ProductsController {
         this._productService = productService;
     }
 
+    @PostMapping("/add")
+    public Result add(@RequestBody Product product){
+        return this._productService.add(product);
+    }
 
     @GetMapping("/getall")
     public DataResult<List<Product>> getAll(){
